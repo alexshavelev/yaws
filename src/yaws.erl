@@ -170,7 +170,7 @@
 -export([parse_ipmask/1, match_ipmask/2]).
 
 -export([get_app_dir/0, get_ebin_dir/0, get_priv_dir/0,
-         get_inc_dir/0]).
+         get_inc_dir/0, get_otp_version/0]).
 
 %% Internal
 -export([local_time_as_gmt_string/1, universal_time_as_string/1,
@@ -2917,3 +2917,6 @@ get_priv_dir() ->
 
 get_inc_dir() ->
     get_app_subdir(include).
+    
+get_otp_version() ->
+    erlang:display(erlang:system_info(otp_release)).     
